@@ -6,6 +6,8 @@ namespace STS\Beankeep\Traits;
 
 trait HasAccountAccessors
 {
+    use CanLookupAttribute;
+
     public static array $accountFieldAttributes = [
         'getId' => 'id',
         'getAccountNumber' => 'accountNumber',
@@ -32,11 +34,4 @@ trait HasAccountAccessors
     {
         return $this->lookupAttribute(__METHOD__);
     }
-
-    protected function lookupAttribute(string $methodName): mixed
-    {
-        $attrName = static::$accountFieldAttributes[__METHOD__];
-        return $this->$attrName;
-    }
 }
-
