@@ -11,6 +11,11 @@
             "STS\\Beankeep\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "STS\\Beankeep\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Zeb DeOs",
