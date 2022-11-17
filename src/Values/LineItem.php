@@ -18,7 +18,8 @@ final readonly class LineItem implements IsLineItem
         public Account $account,
         public int $debit,
         public int $credit,
-    ) {}
+    ) {
+    }
 
     public static function make(...$attributes): self
     {

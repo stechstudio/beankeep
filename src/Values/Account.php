@@ -17,7 +17,8 @@ final readonly class Account implements IsAccount
         public string $accountNumber,
         public string $baseType,
         public string $name,
-    ) {}
+    ) {
+    }
 
     public static function make(...$attributes): self
     {

@@ -17,7 +17,8 @@ final readonly class SourceDocument implements IsSourceDocument
         public DateTimeImmutable $date,
         public string $memo,
         public string $attachment,
-    ) {}
+    ) {
+    }
 
     public static function make(...$attributes): self
     {

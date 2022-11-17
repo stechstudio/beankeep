@@ -17,7 +17,8 @@ final readonly class Transaction implements IsTransaction
         public int $id,
         public SourceDocument $sourceDocument,
         public DateTimeImmutable $date,
-    ) {}
+    ) {
+    }
 
     public static function make(...$attributes): self
     {
