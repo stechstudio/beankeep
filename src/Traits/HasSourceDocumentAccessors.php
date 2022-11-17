@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace STS\Beankeep\Traits;
 
 use DateTimeImmutable;
-use STS\Beankeep\Values\SourceDocument;
 
 trait HasSourceDocumentAccessors
 {
@@ -17,17 +16,6 @@ trait HasSourceDocumentAccessors
         'getMemo' => 'memo',
         'getAttachment' => 'attachment',
     ];
-
-    // TODO(zmd): move to own trait
-    public function toValue(): SourceDocument
-    {
-        return SourceDocument::make(
-            id: $this->getId(),
-            date: $this->getDate(),
-            memo: $this->getMemo(),
-            attachment: $this->getAttachment(),
-        );
-    }
 
     public function getId(): string|int
     {

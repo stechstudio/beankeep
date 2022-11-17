@@ -3,14 +3,14 @@
 namespace STS\Beankeep\Values;
 
 use STS\Beankeep\Interfaces\IsSourceDocument;
-use STS\Beankeep\Traits\HasSourceDocumentAccessors;
+use STS\Beankeep\Traits\CanCastToSourceDocumentValue;
 
 /**
  * Track the source of financial transactions recorded by the system.
  */
 final readonly class SourceDocument implements IsSourceDocument
 {
-    use HasSourceDocumentAccessors;
+    use CanCastToSourceDocumentValue;
 
     public function __construct(
         public int $id,

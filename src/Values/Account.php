@@ -3,14 +3,14 @@
 namespace STS\Beankeep\Values;
 
 use STS\Beankeep\Interfaces\IsAccount;
-use STS\Beankeep\Traits\HasAccountAccessors;
+use STS\Beankeep\Traits\CanCastToAccountValue;
 
 /**
  * Record all activity in the chart of accounts.
  */
 final readonly class Account implements IsAccount
 {
-    use HasAccountAccessors;
+    use CanCastToAccountValue;
 
     public function __construct(
         public int $id,

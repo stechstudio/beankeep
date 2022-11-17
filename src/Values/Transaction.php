@@ -3,7 +3,7 @@
 namespace STS\Beankeep\Values;
 
 use STS\Beankeep\Interfaces\IsTransaction;
-use STS\Beankeep\Traits\HasTransactionAccessors;
+use STS\Beankeep\Traits\CanCastToTransactionValue;
 
 /**
  * Association when a source document is posted to the system via two or more
@@ -11,7 +11,7 @@ use STS\Beankeep\Traits\HasTransactionAccessors;
  */
 final readonly class Transaction implements IsTransaction
 {
-    use HasTransactionAccessors;
+    use CanCastToTransactionValue;
 
     public function __construct(
         public int $id,

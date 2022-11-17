@@ -6,7 +6,6 @@ namespace STS\Beankeep\Traits;
 
 use DateTimeImmutable;
 use STS\Beankeep\Interfaces\IsSourceDocument as SourceDocument;
-use STS\Beankeep\Values\Transaction;
 
 trait HasTransactionAccessors
 {
@@ -17,16 +16,6 @@ trait HasTransactionAccessors
         'getSourceDocument' => 'sourceDocument',
         'getDate' => 'date',
     ];
-
-    // TODO(zmd): move to own trait
-    public function toValue(): Transaction
-    {
-        return Transaction::make(
-            id: $this->getId(),
-            sourceDocument: $this->getSourceDocument()->toValue(),
-            date: $this->getDate(),
-        );
-    }
 
     public function getId(): string|int
     {
