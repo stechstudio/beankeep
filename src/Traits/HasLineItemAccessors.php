@@ -6,8 +6,9 @@ namespace STS\Beankeep\Traits;
 
 use STS\Beankeep\Interfaces\IsAccount as Account;
 use STS\Beankeep\Interfaces\IsTransaction as Transaction;
+use STS\Beankeep\Values\LineItem;
 
-trait HasAccountAccessors
+trait HasLineItemAccessors
 {
     use CanLookupAttribute;
 
@@ -18,6 +19,18 @@ trait HasAccountAccessors
         'getDebit' => 'debit',
         'getCredit' => 'credit',
     ];
+
+    // TODO(zmd): move to own trait
+    public function toValue(): LineItem
+    {
+        return LineItem::make(
+            id: $this->getId(),
+            transaction: $this->getTransaction()->toValue(),
+            account: $this->getAccount()->toValue(),
+            debit: $this->getDebit(),
+            credit: $this->getCredit(),
+        );
+    }
 
     public function getId(): string|int
     {

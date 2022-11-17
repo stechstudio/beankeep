@@ -9,21 +9,23 @@ use STS\Beankeep\Traits\HasTransactionAccessors;
  * Association when a source document is posted to the system via two or more
  * line items.
  */
-final readonly class LineItem
+final readonly class Transaction implements IsTransaction
 {
-    use IsTransaction;
     use HasTransactionAccessors;
 
     public function __construct(
         public int $id,
-        public Transaction $transaction,
-        public Account $account,
-        public int $debit,
-        public int $credit,
+        public SourceDocument $sourceDocument,
+        public DateTimeImmutable $date,
     ) {}
 
     public static function make(...$attributes): self
     {
         return new self(...$attributes);
+    }
+
+    public static toValue(): self
+    {
+        return $this;
     }
 }

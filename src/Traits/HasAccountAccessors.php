@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Traits;
 
+use STS\Beankeep\Values\Account;
+
 trait HasAccountAccessors
 {
     use CanLookupAttribute;
@@ -14,6 +16,17 @@ trait HasAccountAccessors
         'getBaseType' => 'baseType',
         'getName' => 'name',
     ];
+
+    // TODO(zmd): move to own trait
+    public function toValue(): Account
+    {
+        return Account::make(
+            id: $this->getId(),
+            accountNumber: $this->getAccountNumber(),
+            baseType: $this->getBaseType(),
+            name: $this->getName(),
+        );
+    }
 
     public function getId(): string|int
     {

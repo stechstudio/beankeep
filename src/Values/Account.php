@@ -8,9 +8,8 @@ use STS\Beankeep\Traits\HasAccountAccessors;
 /**
  * Record all activity in the chart of accounts.
  */
-final readonly class Account
+final readonly class Account implements IsAccount
 {
-    use IsAccount;
     use HasAccountAccessors;
 
     public function __construct(
@@ -23,5 +22,10 @@ final readonly class Account
     public static function make(...$attributes): self
     {
         return new self(...$attributes);
+    }
+
+    public static toValue(): self
+    {
+        return $this;
     }
 }

@@ -8,9 +8,8 @@ use STS\Beankeep\Traits\HasLineItemAccessors;
 /**
  * Record an operation (debit or credit) for a transaction against an account.
  */
-final readonly class LineItem
+final readonly class LineItem implements IsLineItem
 {
-    use IsLineItem;
     use HasLineItemAccessors;
 
     public function __construct(
@@ -24,5 +23,10 @@ final readonly class LineItem
     public static function make(...$attributes): self
     {
         return new self(...$attributes);
+    }
+
+    public static toValue(): self
+    {
+        return $this;
     }
 }

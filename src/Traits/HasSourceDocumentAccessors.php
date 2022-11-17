@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace STS\Beankeep\Traits;
 
 use DateTimeImmutable;
-use STS\Beankeep\Interfaces\IsAccount as Account;
-use STS\Beankeep\Interfaces\IsTransaction as Transaction;
+use STS\Beankeep\Values\SourceDocument;
 
-trait HasAccountAccessors
+trait HasSourceDocumentAccessors
 {
     use CanLookupAttribute;
 
@@ -18,6 +17,17 @@ trait HasAccountAccessors
         'getMemo' => 'memo',
         'getAttachment' => 'attachment',
     ];
+
+    // TODO(zmd): move to own trait
+    public function toValue(): SourceDocument
+    {
+        return SourceDocument::make(
+            id: $this->getId(),
+            date: $this->getDate(),
+            memo: $this->getMemo(),
+            attachment: $this->getAttachment(),
+        );
+    }
 
     public function getId(): string|int
     {

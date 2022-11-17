@@ -8,9 +8,8 @@ use STS\Beankeep\Traits\HasSourceDocumentAccessors;
 /**
  * Track the source of financial transactions recorded by the system.
  */
-final readonly class SourceDocument
+final readonly class SourceDocument implements IsSourceDocument
 {
-    use IsSourceDocument;
     use HasSourceDocumentAccessors;
 
     public function __construct(
@@ -23,5 +22,10 @@ final readonly class SourceDocument
     public static function make(...$attributes): self
     {
         return new self(...$attributes);
+    }
+
+    public static toValue(): self
+    {
+        return $this;
     }
 }
