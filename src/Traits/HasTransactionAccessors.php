@@ -33,7 +33,7 @@ trait HasTransactionAccessors
         return $this->lookupAttribute(__METHOD__);
     }
 
-    public function getSourceDocument(): IsSourceDocument
+    public function getSourceDocument(): SourceDocument
     {
         return $this->lookupAttribute(__METHOD__);
     }
