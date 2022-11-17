@@ -8,12 +8,11 @@ trait HasAccountAccessors
 {
     use CanLookupAttribute;
 
-    // TODO(zmd): finish implementing me!
     public static array $accountFieldAttributes = [
         'getId' => 'id',
-        '' => '???',
-        '' => '???',
-        '' => '???',
+        'getAccountNumber' => 'accountNumber',
+        'getBaseType' => 'baseType',
+        'getName' => 'name',
     ];
 
     public function getId(): string|int
