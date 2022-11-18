@@ -48,5 +48,9 @@ final class AccountTest extends TestCase
         $this->assertTrue($account instanceOf IsAccount);
     }
 
-    // TODO(zmd): public function testToValueIsIdentityFunction(): void
+    public function testToValueIsIdentityFunction(): void
+    {
+        $account = new Account(1, '1010', 'asset', 'Cash');
+        $this->assertTrue($account === $account->toValue());
+    }
 }
