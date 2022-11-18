@@ -63,4 +63,11 @@ final class TransactionTest extends TestCase
 
         $this->assertTrue($transaction instanceOf IsTransaction);
     }
+
+    public function testToValueIsIdentityFunction(): void
+    {
+        $transaction = Transaction::make('abc', $this->sourceDocument(), $this->date());
+
+        $this->assertTrue($transaction === $transaction->toValue());
+    }
 }
