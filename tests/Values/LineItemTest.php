@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Tests\Values;
 
-use STS\Beankeep\Interfaces\IsTransaction;
+use STS\Beankeep\Interfaces\IsLineItem;
 use STS\Beankeep\Values\LineItem;
 
 final class LineItemTest extends TestCase
@@ -54,5 +54,18 @@ final class LineItemTest extends TestCase
         );
 
         $this->assertEquals('abc', $lineItem->id);
+    }
+
+    public function testSatisfiesIsLineItemInterface(): void
+    {
+        $lineItem = LineItem::make(
+            id: 1,
+            transaction: $this->transaction(),
+            account: $this->account(),
+            debit: 10000,
+            credit: 0,
+        );
+
+        $this->assertTrue($lineItem instanceOf IsLineItem);
     }
 }
