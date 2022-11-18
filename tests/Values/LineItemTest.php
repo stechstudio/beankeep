@@ -68,4 +68,17 @@ final class LineItemTest extends TestCase
 
         $this->assertTrue($lineItem instanceOf IsLineItem);
     }
+
+    public function testToValueIsIdentityFunction(): void
+    {
+        $lineItem = LineItem::make(
+            id: 1,
+            transaction: $this->transaction(),
+            account: $this->account(),
+            debit: 10000,
+            credit: 0,
+        );
+
+        $this->assertTrue($lineItem === $lineItem->toValue());
+    }
 }
