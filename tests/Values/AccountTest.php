@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Tests\Values;
 
-use PHPUnit\Framework\TestCase;
-use STS\Beankeep\Values\Account;
 use STS\Beankeep\Interfaces\IsAccount;
+use STS\Beankeep\Values\Account;
 
 final class AccountTest extends TestCase
 {
