@@ -25,7 +25,7 @@ final readonly class Account implements IsAccount
         return new self(...$attributes);
     }
 
-    public static toValue(): self
+    public function toValue(): self
     {
         return $this;
     }

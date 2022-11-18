@@ -6,13 +6,16 @@ namespace STS\Beankeep\Traits;
 
 trait CanLookupAttribute
 {
-    public static array $accountFieldAttributes;
+    // TODO(zmd): check if $beankeepGettersToAttributes property exists, and
+    //   use it by default _if so_
+    // TODO(zmd): otherwise provide default implementation (e.g. "getId" => "Id" => "id")?
+    abstract protected static function mapBeankeepGetterToAttribute(string $getter): string;
 
-    protected function lookupAttribute(string $methodName): mixed
+    protected function getBeankeepAttribute(string $methodName): mixed
     {
         $methodNameParts = explode('::', $methodName);
         $bareMethodName = end($methodNameParts);
-        $attribute = static::$accountFieldAttributes[$bareMethodName];
+        $attribute = static::beankeepGetterToAttribute($bareMethodName);
 
         return $this->$attribute;
     }

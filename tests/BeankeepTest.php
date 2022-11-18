@@ -19,4 +19,3 @@ final class BeankeepTest extends TestCase
         $this->assertFalse(Beankeep::error());
     }
 }
-

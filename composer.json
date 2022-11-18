@@ -29,6 +29,12 @@
         "psysh": [
             "Composer\\Config::disableProcessTimeout",
             "psysh"
+        ],
+        "repl": [
+          "@psysh"
+        ],
+        "test": [
+          "phpunit"
         ]
     }
 }
