@@ -21,9 +21,14 @@ final readonly class LineItem implements IsLineItem
     ) {
     }
 
-    public static function make(...$attributes): self
-    {
-        return new self(...$attributes);
+    public static function make(
+        string|int $id,
+        Transaction $transaction,
+        Account $account,
+        int $debit,
+        int $credit,
+    ): self {
+        return new self($id, $transaction, $account, $debit, $credit);
     }
 
     public function toValue(): self

@@ -21,9 +21,12 @@ final readonly class Transaction implements IsTransaction
     ) {
     }
 
-    public static function make(...$attributes): self
-    {
-        return new self(...$attributes);
+    public static function make(
+        string|int $id,
+        SourceDocument $sourceDocument,
+        DateTimeImmutable $date,
+    ): self {
+        return new self($id, $sourceDocument, $date);
     }
 
     public function toValue(): self

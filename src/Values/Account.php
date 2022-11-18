@@ -20,9 +20,13 @@ final readonly class Account implements IsAccount
     ) {
     }
 
-    public static function make(...$attributes): self
-    {
-        return new self(...$attributes);
+    public static function make(
+        string|int $id,
+        string $accountNumber,
+        string $baseType,
+        string $name,
+    ): self {
+        return new self($id, $accountNumber, $baseType, $name);
     }
 
     public function toValue(): self

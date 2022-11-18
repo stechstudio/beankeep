@@ -21,9 +21,13 @@ final readonly class SourceDocument implements IsSourceDocument
     ) {
     }
 
-    public static function make(...$attributes): self
-    {
-        return new self(...$attributes);
+    public static function make(
+        string|int $id,
+        DateTimeImmutable $date,
+        string $memo,
+        string $attachment,
+    ): self {
+        return new self($id, $date, $memo, $attachment);
     }
 
     public function toValue(): self
