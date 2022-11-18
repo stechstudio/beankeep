@@ -25,4 +25,21 @@ final class LineItemTest extends TestCase
         $this->assertEquals(10000, $lineItem->debit);
         $this->assertEquals(0, $lineItem->credit);
     }
+
+    public function testMakeConstructorAlias(): void
+    {
+        $lineItem = LineItem::make(
+            id: 1,
+            transaction: $this->transaction(),
+            account: $this->account(),
+            debit: 10000,
+            credit: 0,
+        );
+
+        $this->assertEquals(1, $lineItem->id);
+        $this->assertEquals($this->transaction(), $lineItem->transaction);
+        $this->assertEquals($this->account(), $lineItem->account);
+        $this->assertEquals(10000, $lineItem->debit);
+        $this->assertEquals(0, $lineItem->credit);
+    }
 }
