@@ -63,4 +63,16 @@ final class SourceDocumentTest extends TestCase
 
         $this->assertEquals('abc', $sourceDocument->id);
     }
+
+    public function testSatisfiesIsSourceDocumentInterface(): void
+    {
+        $sourceDocument = SourceDocument::make(
+            id: 'abc',
+            date: $this->date(),
+            memo: $this->memo,
+            attachment: $this->attachment,
+        );
+
+        $this->assertTrue($sourceDocument instanceOf IsSourceDocument);
+    }
 }
