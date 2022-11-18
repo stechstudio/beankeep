@@ -15,7 +15,7 @@ trait CanLookupAttribute
     {
         $methodNameParts = explode('::', $methodName);
         $bareMethodName = end($methodNameParts);
-        $attribute = static::beankeepGetterToAttribute($bareMethodName);
+        $attribute = static::mapBeankeepGetterToAttribute($bareMethodName);
 
         return $this->$attribute;
     }
