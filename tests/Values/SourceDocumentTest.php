@@ -11,11 +11,11 @@ use DateTimeImmutable;
 
 final class SourceDocumentTest extends TestCase
 {
-    protected $dateStr = '2021-09-09 05:00:00 -08:00';
+    protected string $dateStr = '2021-09-09 05:00:00 -08:00';
 
-    protected $memo = 'Reticulate the splines';
+    protected string $memo = 'Reticulate the splines';
 
-    protected $attachment = '2021-09-09-splines-r-us--reticulating-service-invoice.pdf';
+    protected string $attachment = '2021-09-09-splines-r-us--reticulating-service-invoice.pdf';
 
     protected function date(?string $dateStr=null): DateTimeImmutable
     {
