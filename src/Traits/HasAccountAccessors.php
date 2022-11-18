@@ -8,38 +8,33 @@ use UnhandledMatchError;
 
 trait HasAccountAccessors
 {
-    use CanLookupAttribute;
-
     /**
-     * @throws UnhandledMatchError
+     * @var array<string, string> $gettersToAttrs
      */
-    protected static function mapBeankeepGetterToAttribute(string $getter): string
-    {
-        return match($getter) {
-            'getId' => 'id',
-            'getAccountNumber' => 'accountNumber',
-            'getBaseType' => 'baseType',
-            'getName' => 'name',
-        };
-    }
+    static array $gettersToAttrs = [
+        'id' => 'id',
+        'accountNumber' => 'accountNumber',
+        'baseType' => 'baseType',
+        'name' => 'name',
+    ];
 
     public function getId(): string|int
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::$gettersToAttrs['id']};
     }
 
     public function getAccountNumber(): string
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::$gettersToAttrs['accountNumber']};
     }
 
     public function getBaseType(): string
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::$gettersToAttrs['baseType']};
     }
 
     public function getName(): string
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::$gettersToAttrs['name']};
     }
 }
