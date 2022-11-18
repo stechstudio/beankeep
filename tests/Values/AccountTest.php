@@ -40,7 +40,11 @@ final class AccountTest extends TestCase
         $this->assertEquals('Cash', $account->name);
     }
 
-    // TODO(zmd): public function testIdMayBeString(): void
+    public function testIdMayBeString(): void
+    {
+        $account = new Account('abc', '1010', 'asset', 'Cash');
+        $this->assertEquals('abc', $account->id);
+    }
 
     public function testSatisfiesIsAccountInterface(): void
     {

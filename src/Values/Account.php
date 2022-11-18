@@ -13,7 +13,7 @@ final readonly class Account implements IsAccount
     use CanCastToAccountValue;
 
     public function __construct(
-        public int $id,
+        public string|int $id,
         public string $accountNumber,
         public string $baseType,
         public string $name,
