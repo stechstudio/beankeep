@@ -2,6 +2,7 @@
 
 namespace STS\Beankeep\Values;
 
+use DateTimeImmutable;
 use STS\Beankeep\Interfaces\IsSourceDocument;
 use STS\Beankeep\Traits\CanCastToSourceDocumentValue;
 
@@ -25,7 +26,7 @@ final readonly class SourceDocument implements IsSourceDocument
         return new self(...$attributes);
     }
 
-    public static toValue(): self
+    public function toValue(): self
     {
         return $this;
     }

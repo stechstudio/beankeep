@@ -10,30 +10,33 @@ trait HasSourceDocumentAccessors
 {
     use CanLookupAttribute;
 
-    public static array $accountFieldAttributes = [
-        'getId' => 'id',
-        'getDate' => 'date',
-        'getMemo' => 'memo',
-        'getAttachment' => 'attachment',
-    ];
+    protected static function mapBeankeepGetterToAttribute(string $getter): string
+    {
+        return match($getter) {
+            'getId' => 'id',
+            'getDate' => 'date',
+            'getMemo' => 'memo',
+            'getAttachment' => 'attachment',
+        };
+    }
 
     public function getId(): string|int
     {
-        return $this->lookupAttribute(__METHOD__);
+        return $this->getBeankeepAttribute(__METHOD__);
     }
 
     public function getDate(): DateTimeImmutable
     {
-        return $this->lookupAttribute(__METHOD__);
+        return $this->getBeankeepAttribute(__METHOD__);
     }
 
     public function getMemo(): string
     {
-        return $this->lookupAttribute(__METHOD__);
+        return $this->getBeankeepAttribute(__METHOD__);
     }
 
     public function getAttachment(): string
     {
-        return $this->lookupAttribute(__METHOD__);
+        return $this->getBeankeepAttribute(__METHOD__);
     }
 }
