@@ -9,7 +9,7 @@ use STS\Beankeep\Values\Account;
 
 final class AccountTest extends TestCase
 {
-    public function testMemberValues()
+    public function testMemberValues(): void
     {
         $account = new Account(
             id: 1,
@@ -24,9 +24,22 @@ final class AccountTest extends TestCase
         $this->assertEquals('Cash', $account->name);
     }
 
-    // TODO(zmd): public function testMakeConstructorAlias()
+    public function testMakeConstructorAlias(): void
+    {
+        $account = Account::make(
+            id: 1,
+            accountNumber: '1010',
+            baseType: 'asset',
+            name: 'Cash',
+        );
 
-    // TODO(zmd): public function testSatisfiesIsAccountInterface()
+        $this->assertEquals(1, $account->id);
+        $this->assertEquals('1010', $account->accountNumber);
+        $this->assertEquals('asset', $account->baseType);
+        $this->assertEquals('Cash', $account->name);
+    }
 
-    // TODO(zmd): public function testToValueIsIdentityFunction()
+    // TODO(zmd): public function testSatisfiesIsAccountInterface(): void
+
+    // TODO(zmd): public function testToValueIsIdentityFunction(): void
 }
