@@ -6,6 +6,7 @@ namespace STS\Beankeep\Tests\Values;
 
 use PHPUnit\Framework\TestCase;
 use STS\Beankeep\Values\Account;
+use STS\Beankeep\Interfaces\IsAccount;
 
 final class AccountTest extends TestCase
 {
@@ -39,7 +40,13 @@ final class AccountTest extends TestCase
         $this->assertEquals('Cash', $account->name);
     }
 
-    // TODO(zmd): public function testSatisfiesIsAccountInterface(): void
+    // TODO(zmd): public function testIdMayBeString(): void
+
+    public function testSatisfiesIsAccountInterface(): void
+    {
+        $account = new Account(1, '1010', 'asset', 'Cash');
+        $this->assertTrue($account instanceOf IsAccount);
+    }
 
     // TODO(zmd): public function testToValueIsIdentityFunction(): void
 }
