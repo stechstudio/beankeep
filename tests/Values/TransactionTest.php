@@ -56,4 +56,11 @@ final class TransactionTest extends TestCase
 
         $this->assertEquals('abc', $transaction->id);
     }
+
+    public function testSatisfiesIsTransactionInterface(): void
+    {
+        $transaction = Transaction::make('abc', $this->sourceDocument(), $this->date());
+
+        $this->assertTrue($transaction instanceOf IsTransaction);
+    }
 }
