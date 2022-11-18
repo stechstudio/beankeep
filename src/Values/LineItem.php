@@ -13,7 +13,7 @@ final readonly class LineItem implements IsLineItem
     use CanCastToLineItemValue;
 
     public function __construct(
-        public int $id,
+        public string|int $id,
         public Transaction $transaction,
         public Account $account,
         public int $debit,

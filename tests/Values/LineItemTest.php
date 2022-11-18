@@ -42,4 +42,17 @@ final class LineItemTest extends TestCase
         $this->assertEquals(10000, $lineItem->debit);
         $this->assertEquals(0, $lineItem->credit);
     }
+
+    public function testIdMayBeString(): void
+    {
+        $lineItem = LineItem::make(
+            id: 'abc',
+            transaction: $this->transaction(),
+            account: $this->account(),
+            debit: 10000,
+            credit: 0,
+        );
+
+        $this->assertEquals('abc', $lineItem->id);
+    }
 }
