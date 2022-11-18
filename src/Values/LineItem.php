@@ -26,7 +26,7 @@ final readonly class LineItem implements IsLineItem
         return new self(...$attributes);
     }
 
-    public static toValue(): self
+    public function toValue(): self
     {
         return $this;
     }
