@@ -51,4 +51,16 @@ final class SourceDocumentTest extends TestCase
         $this->assertEquals($this->memo, $sourceDocument->memo);
         $this->assertEquals($this->attachment, $sourceDocument->attachment);
     }
+
+    public function testIdMayBeString(): void
+    {
+        $sourceDocument = SourceDocument::make(
+            id: 'abc',
+            date: $this->date(),
+            memo: $this->memo,
+            attachment: $this->attachment,
+        );
+
+        $this->assertEquals('abc', $sourceDocument->id);
+    }
 }

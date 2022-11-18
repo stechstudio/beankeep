@@ -14,7 +14,7 @@ final readonly class SourceDocument implements IsSourceDocument
     use CanCastToSourceDocumentValue;
 
     public function __construct(
-        public int $id,
+        public string|int $id,
         public DateTimeImmutable $date,
         public string $memo,
         public string $attachment,
