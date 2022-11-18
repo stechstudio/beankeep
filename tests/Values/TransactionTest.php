@@ -49,4 +49,11 @@ final class TransactionTest extends TestCase
         $this->assertEquals($this->sourceDocument(), $transaction->sourceDocument);
         $this->assertEquals($this->date(), $transaction->date);
     }
+
+    public function testIdMayBeString(): void
+    {
+        $transaction = Transaction::make('abc', $this->sourceDocument(), $this->date());
+
+        $this->assertEquals('abc', $transaction->id);
+    }
 }

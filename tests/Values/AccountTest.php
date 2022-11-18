@@ -42,18 +42,21 @@ final class AccountTest extends TestCase
     public function testIdMayBeString(): void
     {
         $account = new Account('abc', '1010', 'asset', 'Cash');
+
         $this->assertEquals('abc', $account->id);
     }
 
     public function testSatisfiesIsAccountInterface(): void
     {
         $account = new Account(1, '1010', 'asset', 'Cash');
+
         $this->assertTrue($account instanceOf IsAccount);
     }
 
     public function testToValueIsIdentityFunction(): void
     {
         $account = new Account(1, '1010', 'asset', 'Cash');
+
         $this->assertTrue($account === $account->toValue());
     }
 }
