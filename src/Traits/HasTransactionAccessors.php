@@ -6,11 +6,15 @@ namespace STS\Beankeep\Traits;
 
 use DateTimeImmutable;
 use STS\Beankeep\Interfaces\IsSourceDocument as SourceDocument;
+use UnhandledMatchError;
 
 trait HasTransactionAccessors
 {
     use CanLookupAttribute;
 
+    /**
+     * @throws UnhandledMatchError
+     */
     protected static function mapBeankeepGetterToAttribute(string $getter): string
     {
         return match($getter) {

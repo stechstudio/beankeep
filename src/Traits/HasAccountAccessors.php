@@ -4,10 +4,15 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Traits;
 
+use UnhandledMatchError;
+
 trait HasAccountAccessors
 {
     use CanLookupAttribute;
 
+    /**
+     * @throws UnhandledMatchError
+     */
     protected static function mapBeankeepGetterToAttribute(string $getter): string
     {
         return match($getter) {

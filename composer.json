@@ -35,7 +35,7 @@
           "@psysh"
         ],
         "stan": [
-          "phpstan analyse src tests"
+          "phpstan analyse --level=5 src tests"
         ],
         "test": [
           "phpunit"

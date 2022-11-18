@@ -6,11 +6,15 @@ namespace STS\Beankeep\Traits;
 
 use STS\Beankeep\Interfaces\IsAccount as Account;
 use STS\Beankeep\Interfaces\IsTransaction as Transaction;
+use UnhandledMatchError;
 
 trait HasLineItemAccessors
 {
     use CanLookupAttribute;
 
+    /**
+     * @throws UnhandledMatchError
+     */
     protected static function mapBeankeepGetterToAttribute(string $getter): string
     {
         return match($getter) {
