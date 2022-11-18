@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Tests\Values;
 
-use PHPUnit\Framework\TestCase;
-use STS\Beankeep\Values\SourceDocument;
-use STS\Beankeep\Interfaces\IsSourceDocument;
 use DateTimeImmutable;
+use STS\Beankeep\Interfaces\IsSourceDocument;
+use STS\Beankeep\Values\SourceDocument;
 
 final class SourceDocumentTest extends TestCase
 {
@@ -16,11 +15,6 @@ final class SourceDocumentTest extends TestCase
     protected string $memo = 'Reticulate the splines';
 
     protected string $attachment = '2021-09-09-splines-r-us--reticulating-service-invoice.pdf';
-
-    protected function date(?string $dateStr=null): DateTimeImmutable
-    {
-        return new \DateTimeImmutable($dateStr ?? $this->dateStr);
-    }
 
     public function testMemberValues(): void
     {

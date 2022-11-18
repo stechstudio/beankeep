@@ -11,25 +11,28 @@ trait HasTransactionAccessors
 {
     use CanLookupAttribute;
 
-    public static array $accountFieldAttributes = [
-        'getId' => 'id',
-        'getSourceDocument' => 'sourceDocument',
-        'getDate' => 'date',
-    ];
+    protected static function mapBeankeepGetterToAttribute(string $getter): string
+    {
+        return match($getter) {
+            'getId' => 'id',
+            'getSourceDocument' => 'sourceDocument',
+            'getDate' => 'date',
+        };
+    }
 
     public function getId(): string|int
     {
-        return $this->lookupAttribute(__METHOD__);
+        return $this->getBeankeepAttribute(__METHOD__);
     }
 
     public function getSourceDocument(): SourceDocument
     {
-        return $this->lookupAttribute(__METHOD__);
+        return $this->getBeankeepAttribute(__METHOD__);
     }
 
     public function getDate(): DateTimeImmutable
     {
-        return $this->lookupAttribute(__METHOD__);
+        return $this->getBeankeepAttribute(__METHOD__);
     }
 }
 

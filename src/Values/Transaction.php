@@ -2,6 +2,7 @@
 
 namespace STS\Beankeep\Values;
 
+use DateTimeImmutable;
 use STS\Beankeep\Interfaces\IsTransaction;
 use STS\Beankeep\Traits\CanCastToTransactionValue;
 
@@ -14,7 +15,7 @@ final readonly class Transaction implements IsTransaction
     use CanCastToTransactionValue;
 
     public function __construct(
-        public int $id,
+        public string|int $id,
         public SourceDocument $sourceDocument,
         public DateTimeImmutable $date,
     ) {
@@ -25,7 +26,7 @@ final readonly class Transaction implements IsTransaction
         return new self(...$attributes);
     }
 
-    public static toValue(): self
+    public function toValue(): self
     {
         return $this;
     }
