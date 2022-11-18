@@ -75,4 +75,16 @@ final class SourceDocumentTest extends TestCase
 
         $this->assertTrue($sourceDocument instanceOf IsSourceDocument);
     }
+
+    public function testToValueIsIdentityFunction(): void
+    {
+        $sourceDocument = SourceDocument::make(
+            id: 'abc',
+            date: $this->date(),
+            memo: $this->memo,
+            attachment: $this->attachment,
+        );
+
+        $this->assertTrue($sourceDocument === $sourceDocument->toValue());
+    }
 }
