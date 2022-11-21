@@ -31,6 +31,21 @@ final class SourceDocumentTest extends TestCase
         $this->assertEquals($this->attachment, $sourceDocument->attachment);
     }
 
+    public function testGetters(): void
+    {
+        $sourceDocument = new SourceDocument(
+            id: 1,
+            date: $this->date(),
+            memo: $this->memo,
+            attachment: $this->attachment,
+        );
+
+        $this->assertEquals(1, $sourceDocument->getId());
+        $this->assertEquals($this->date(), $sourceDocument->getDate());
+        $this->assertEquals($this->memo, $sourceDocument->getMemo());
+        $this->assertEquals($this->attachment, $sourceDocument->getAttachment());
+    }
+
     public function testMakeConstructorAlias(): void
     {
         $sourceDocument = SourceDocument::make(
