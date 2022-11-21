@@ -10,33 +10,31 @@ use UnhandledMatchError;
 
 trait HasTransactionAccessors
 {
-    use CanLookupAttribute;
-
     /**
      * @throws UnhandledMatchError
      */
-    protected static function mapBeankeepGetterToAttribute(string $getter): string
+    static function beankeepPropertyLookup(string $beankeepPropertyName): string
     {
-        return match($getter) {
-            'getId' => 'id',
-            'getSourceDocument' => 'sourceDocument',
-            'getDate' => 'date',
+        return match($beankeepPropertyName) {
+            'id' => 'id',
+            'sourceDocument' => 'sourceDocument',
+            'date' => 'date',
         };
     }
 
     public function getId(): string|int
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('id')};
     }
 
     public function getSourceDocument(): SourceDocument
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('sourceDocument')};
     }
 
     public function getDate(): DateTimeImmutable
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('date')};
     }
 }
 
