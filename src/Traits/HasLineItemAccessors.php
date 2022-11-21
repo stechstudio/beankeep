@@ -10,45 +10,42 @@ use UnhandledMatchError;
 
 trait HasLineItemAccessors
 {
-    use CanLookupAttribute;
-
     /**
      * @throws UnhandledMatchError
      */
-    protected static function mapBeankeepGetterToAttribute(string $getter): string
+    static function beankeepPropertyLookup(string $beankeepPropertyName): string
     {
-        return match($getter) {
-            'getId' => 'id',
-            'getTransaction' => 'transaction',
-            'getAccount' => 'account',
-            'getDebit' => 'debit',
-            'getCredit' => 'credit',
+        return match($beankeepPropertyName) {
+            'id' => 'id',
+            'transaction' => 'transaction',
+            'account' => 'account',
+            'debit' => 'debit',
+            'credit' => 'credit',
         };
     }
 
     public function getId(): string|int
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('id')};
     }
 
     public function getTransaction(): Transaction
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('transaction')};
     }
 
     public function getAccount(): Account
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('account')};
     }
 
     public function getDebit(): int
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('credit')};
     }
 
     public function getCredit(): int
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('debit')};
     }
 }
-

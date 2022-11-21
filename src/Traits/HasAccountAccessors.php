@@ -9,32 +9,35 @@ use UnhandledMatchError;
 trait HasAccountAccessors
 {
     /**
-     * @var array<string, string> $gettersToAttrs
+     * @throws UnhandledMatchError
      */
-    static array $gettersToAttrs = [
-        'id' => 'id',
-        'accountNumber' => 'accountNumber',
-        'baseType' => 'baseType',
-        'name' => 'name',
-    ];
+    static function beankeepPropertyLookup(string $beankeepPropertyName): string
+    {
+        return match($beankeepPropertyName) {
+            'id' => 'id',
+            'accountNumber' => 'accountNumber',
+            'baseType' => 'baseType',
+            'name' => 'name',
+        };
+    }
 
     public function getId(): string|int
     {
-        return $this->${static::$gettersToAttrs['id']};
+        return $this->${static::beankeepPropertyLookup('id')};
     }
 
     public function getAccountNumber(): string
     {
-        return $this->${static::$gettersToAttrs['accountNumber']};
+        return $this->${static::beankeepPropertyLookup('accountNumber')};
     }
 
     public function getBaseType(): string
     {
-        return $this->${static::$gettersToAttrs['baseType']};
+        return $this->${static::beankeepPropertyLookup('baseType')};
     }
 
     public function getName(): string
     {
-        return $this->${static::$gettersToAttrs['name']};
+        return $this->${static::beankeepPropertyLookup('name')};
     }
 }
