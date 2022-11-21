@@ -7,13 +7,13 @@ namespace STS\Beankeep\Interfaces;
 use DateTimeImmutable;
 use STS\Beankeep\Values\Transaction;
 
-interface IsTransaction
+interface TransactionInterface
 {
     public function toValue(): Transaction;
 
     public function getId(): string|int;
 
-    public function getSourceDocument(): IsSourceDocument;
+    public function getSourceDocument(): SourceDocumentInterface;
 
     public function getDate(): DateTimeImmutable;
 }

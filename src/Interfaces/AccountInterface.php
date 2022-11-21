@@ -6,7 +6,7 @@ namespace STS\Beankeep\Interfaces;
 
 use STS\Beankeep\Values\Account;
 
-interface IsAccount
+interface AccountInterface
 {
     public function toValue(): Account;
 

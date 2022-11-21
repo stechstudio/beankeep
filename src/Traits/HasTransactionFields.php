@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace STS\Beankeep\Traits;
 
 use DateTimeImmutable;
-use STS\Beankeep\Interfaces\IsSourceDocument as SourceDocument;
+use STS\Beankeep\Interfaces\SourceDocumentInterface as SourceDocument;
 use UnhandledMatchError;
 
 trait HasTransactionFields

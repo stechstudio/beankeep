@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Traits;
 
-use STS\Beankeep\Interfaces\IsAccount as Account;
-use STS\Beankeep\Interfaces\IsTransaction as Transaction;
+use STS\Beankeep\Interfaces\AccountInterface as Account;
+use STS\Beankeep\Interfaces\TransactionInterface as Transaction;
 use UnhandledMatchError;
 
 trait HasLineItemFields

@@ -3,13 +3,13 @@
 namespace STS\Beankeep\Values;
 
 use DateTimeImmutable;
-use STS\Beankeep\Interfaces\IsSourceDocument;
+use STS\Beankeep\Interfaces\SourceDocumentInterface;
 use STS\Beankeep\Traits\CanCastToSourceDocumentValue;
 
 /**
  * Track the source of financial transactions recorded by the system.
  */
-final readonly class SourceDocument implements IsSourceDocument
+final readonly class SourceDocument implements SourceDocumentInterface
 {
     use CanCastToSourceDocumentValue;
 

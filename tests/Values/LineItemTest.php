@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Tests\Values;
 
-use STS\Beankeep\Interfaces\IsLineItem;
+use STS\Beankeep\Interfaces\LineItemInterface;
 use STS\Beankeep\Values\LineItem;
 
 final class LineItemTest extends TestCase
@@ -73,7 +73,7 @@ final class LineItemTest extends TestCase
         $this->assertEquals('abc', $lineItem->id);
     }
 
-    public function testSatisfiesIsLineItemInterface(): void
+    public function testSatisfiesLineItemInterface(): void
     {
         $lineItem = LineItem::make(
             id: 1,
@@ -83,7 +83,7 @@ final class LineItemTest extends TestCase
             credit: 0,
         );
 
-        $this->assertTrue($lineItem instanceOf IsLineItem);
+        $this->assertTrue($lineItem instanceOf LineItemInterface);
     }
 
     public function testToValueIsIdentityFunction(): void

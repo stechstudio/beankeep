@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace STS\Beankeep\Tests\Values;
 
 use DateTimeImmutable;
-use STS\Beankeep\Interfaces\IsSourceDocument;
+use STS\Beankeep\Interfaces\SourceDocumentInterface;
 use STS\Beankeep\Values\SourceDocument;
 
 final class SourceDocumentTest extends TestCase
@@ -73,7 +73,7 @@ final class SourceDocumentTest extends TestCase
         $this->assertEquals('abc', $sourceDocument->id);
     }
 
-    public function testSatisfiesIsSourceDocumentInterface(): void
+    public function testSatisfiesSourceDocumentInterface(): void
     {
         $sourceDocument = SourceDocument::make(
             id: 'abc',
@@ -82,7 +82,7 @@ final class SourceDocumentTest extends TestCase
             attachment: $this->attachment,
         );
 
-        $this->assertTrue($sourceDocument instanceOf IsSourceDocument);
+        $this->assertTrue($sourceDocument instanceOf SourceDocumentInterface);
     }
 
     public function testToValueIsIdentityFunction(): void

@@ -2,13 +2,13 @@
 
 namespace STS\Beankeep\Values;
 
-use STS\Beankeep\Interfaces\IsLineItem;
+use STS\Beankeep\Interfaces\LineItemInterface;
 use STS\Beankeep\Traits\CanCastToLineItemValue;
 
 /**
  * Record an operation (debit or credit) for a transaction against an account.
  */
-final readonly class LineItem implements IsLineItem
+final readonly class LineItem implements LineItemInterface
 {
     use CanCastToLineItemValue;
 

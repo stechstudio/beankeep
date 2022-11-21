@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Tests\Values;
 
-use STS\Beankeep\Interfaces\IsTransaction;
+use STS\Beankeep\Interfaces\TransactionInterface;
 use STS\Beankeep\Values\Transaction;
 
 final class TransactionTest extends TestCase
@@ -57,11 +57,11 @@ final class TransactionTest extends TestCase
         $this->assertEquals('abc', $transaction->id);
     }
 
-    public function testSatisfiesIsTransactionInterface(): void
+    public function testSatisfiesTransactionInterface(): void
     {
         $transaction = Transaction::make('abc', $this->sourceDocument(), $this->date());
 
-        $this->assertTrue($transaction instanceOf IsTransaction);
+        $this->assertTrue($transaction instanceOf TransactionInterface);
     }
 
     public function testToValueIsIdentityFunction(): void

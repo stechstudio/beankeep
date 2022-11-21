@@ -2,13 +2,13 @@
 
 namespace STS\Beankeep\Values;
 
-use STS\Beankeep\Interfaces\IsAccount;
+use STS\Beankeep\Interfaces\AccountInterface;
 use STS\Beankeep\Traits\CanCastToAccountValue;
 
 /**
  * Record all activity in the chart of accounts.
  */
-final readonly class Account implements IsAccount
+final readonly class Account implements AccountInterface
 {
     use CanCastToAccountValue;
 

@@ -7,7 +7,7 @@ namespace STS\Beankeep\Interfaces;
 use DateTimeImmutable;
 use STS\Beankeep\Values\SourceDocument;
 
-interface IsSourceDocument
+interface SourceDocumentInterface
 {
     public function toValue(): SourceDocument;
 
