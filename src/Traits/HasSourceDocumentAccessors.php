@@ -9,38 +9,36 @@ use UnhandledMatchError;
 
 trait HasSourceDocumentAccessors
 {
-    use CanLookupAttribute;
-
     /**
      * @throws UnhandledMatchError
      */
-    protected static function mapBeankeepGetterToAttribute(string $getter): string
+    protected static function beankeepPropertyLookup(string $beankeepPropertyName): string
     {
-        return match($getter) {
-            'getId' => 'id',
-            'getDate' => 'date',
-            'getMemo' => 'memo',
-            'getAttachment' => 'attachment',
+        return match($beankeepPropertyName) {
+            'id' => 'id',
+            'date' => 'date',
+            'memo' => 'memo',
+            'attachment' => 'attachment',
         };
     }
 
     public function getId(): string|int
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('id')};
     }
 
     public function getDate(): DateTimeImmutable
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('date')};
     }
 
     public function getMemo(): string
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('memo')};
     }
 
     public function getAttachment(): string
     {
-        return $this->getBeankeepAttribute(__METHOD__);
+        return $this->${static::beankeepPropertyLookup('attachment')};
     }
 }
