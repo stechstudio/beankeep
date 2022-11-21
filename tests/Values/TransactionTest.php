@@ -24,6 +24,19 @@ final class TransactionTest extends TestCase
         $this->assertEquals($this->date(), $transaction->date);
     }
 
+    public function testGetters(): void
+    {
+        $transaction = new Transaction(
+            id: 1,
+            sourceDocument: $this->sourceDocument(),
+            date: $this->date(),
+        );
+
+        $this->assertEquals(1, $transaction->getId());
+        $this->assertEquals($this->sourceDocument(), $transaction->getSourceDocument());
+        $this->assertEquals($this->date(), $transaction->getDate());
+    }
+
     public function testMakeConstructorAlias(): void
     {
         $transaction = Transaction::make(
