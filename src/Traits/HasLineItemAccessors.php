@@ -41,11 +41,11 @@ trait HasLineItemAccessors
 
     public function getDebit(): int
     {
-        return $this->{static::beankeepPropertyLookup('credit')};
+        return $this->{static::beankeepPropertyLookup('debit')};
     }
 
     public function getCredit(): int
     {
-        return $this->{static::beankeepPropertyLookup('debit')};
+        return $this->{static::beankeepPropertyLookup('credit')};
     }
 }
