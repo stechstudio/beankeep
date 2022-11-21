@@ -16,7 +16,7 @@ final readonly class Account implements AccountInterface
     public function __construct(
         public string|int $id,
         public string $accountNumber,
-        public AccountType $baseType,
+        public AccountType $type,
         public string $name,
     ) {
     }
@@ -24,10 +24,10 @@ final readonly class Account implements AccountInterface
     public static function make(
         string|int $id,
         string $accountNumber,
-        AccountType $baseType,
+        AccountType $type,
         string $name,
     ): self {
-        return new self($id, $accountNumber, $baseType, $name);
+        return new self($id, $accountNumber, $type, $name);
     }
 
     public function toValue(): self

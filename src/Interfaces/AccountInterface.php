@@ -15,7 +15,7 @@ interface AccountInterface
 
     public function getAccountNumber(): string;
 
-    public function getBaseType(): AccountType;
+    public function getType(): AccountType;
 
     public function getName(): string;
 }

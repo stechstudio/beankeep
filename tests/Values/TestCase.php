@@ -31,7 +31,7 @@ class TestCase extends BaseTestCase
         return $this->account ??= Account::make(
             id: 1,
             accountNumber: '1010',
-            baseType: AccountType::Asset,
+            type: AccountType::Asset,
             name: 'Cash',
         );
     }

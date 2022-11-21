@@ -15,13 +15,13 @@ final class AccountTest extends TestCase
         $account = new Account(
             id: 1,
             accountNumber: '1010',
-            baseType: AccountType::Asset,
+            type: AccountType::Asset,
             name: 'Cash',
         );
 
         $this->assertEquals(1, $account->id);
         $this->assertEquals('1010', $account->accountNumber);
-        $this->assertEquals(AccountType::Asset, $account->baseType);
+        $this->assertEquals(AccountType::Asset, $account->type);
         $this->assertEquals('Cash', $account->name);
     }
 
@@ -30,13 +30,13 @@ final class AccountTest extends TestCase
         $account = new Account(
             id: 1,
             accountNumber: '1010',
-            baseType: AccountType::Asset,
+            type: AccountType::Asset,
             name: 'Cash',
         );
 
         $this->assertEquals(1, $account->getId());
         $this->assertEquals('1010', $account->getAccountNumber());
-        $this->assertEquals(AccountType::Asset, $account->getBaseType());
+        $this->assertEquals(AccountType::Asset, $account->getType());
         $this->assertEquals('Cash', $account->getName());
     }
 
@@ -45,13 +45,13 @@ final class AccountTest extends TestCase
         $account = Account::make(
             id: 1,
             accountNumber: '1010',
-            baseType: AccountType::Asset,
+            type: AccountType::Asset,
             name: 'Cash',
         );
 
         $this->assertEquals(1, $account->id);
         $this->assertEquals('1010', $account->accountNumber);
-        $this->assertEquals(AccountType::Asset, $account->baseType);
+        $this->assertEquals(AccountType::Asset, $account->type);
         $this->assertEquals('Cash', $account->name);
     }
 

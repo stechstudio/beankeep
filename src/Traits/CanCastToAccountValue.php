@@ -15,7 +15,7 @@ trait CanCastToAccountValue
         return Account::make(
             id: $this->getId(),
             accountNumber: $this->getAccountNumber(),
-            baseType: $this->getBaseType(),
+            type: $this->getType(),
             name: $this->getName(),
         );
     }

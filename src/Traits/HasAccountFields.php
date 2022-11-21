@@ -17,7 +17,7 @@ trait HasAccountFields
         return match($beankeepPropertyName) {
             'id' => 'id',
             'accountNumber' => 'accountNumber',
-            'baseType' => 'baseType',
+            'type' => 'type',
             'name' => 'name',
         };
     }
@@ -32,9 +32,9 @@ trait HasAccountFields
         return $this->{static::beankeepPropertyLookup('accountNumber')};
     }
 
-    public function getBaseType(): AccountType
+    public function getType(): AccountType
     {
-        return $this->{static::beankeepPropertyLookup('baseType')};
+        return $this->{static::beankeepPropertyLookup('type')};
     }
 
     public function getName(): string
