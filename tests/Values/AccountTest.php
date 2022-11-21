@@ -24,6 +24,21 @@ final class AccountTest extends TestCase
         $this->assertEquals('Cash', $account->name);
     }
 
+    public function testGetters(): void
+    {
+        $account = new Account(
+            id: 1,
+            accountNumber: '1010',
+            baseType: 'asset',
+            name: 'Cash',
+        );
+
+        $this->assertEquals(1, $account->getId());
+        $this->assertEquals('1010', $account->getAccountNumber());
+        $this->assertEquals('asset', $account->getBaseType());
+        $this->assertEquals('Cash', $account->getName());
+    }
+
     public function testMakeConstructorAlias(): void
     {
         $account = Account::make(
