@@ -6,7 +6,7 @@ namespace STS\Beankeep\Traits;
 
 use UnhandledMatchError;
 
-trait HasAccountAccessors
+trait HasAccountFields
 {
     /**
      * @throws UnhandledMatchError

@@ -8,7 +8,7 @@ use STS\Beankeep\Values\Account;
 
 trait CanCastToAccountValue
 {
-    use HasAccountAccessors;
+    use HasAccountFields;
 
     public function toValue(): Account
     {

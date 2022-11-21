@@ -7,7 +7,7 @@ namespace STS\Beankeep\Traits;
 use DateTimeImmutable;
 use UnhandledMatchError;
 
-trait HasSourceDocumentAccessors
+trait HasSourceDocumentFields
 {
     /**
      * @throws UnhandledMatchError

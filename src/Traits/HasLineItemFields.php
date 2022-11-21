@@ -8,7 +8,7 @@ use STS\Beankeep\Interfaces\IsAccount as Account;
 use STS\Beankeep\Interfaces\IsTransaction as Transaction;
 use UnhandledMatchError;
 
-trait HasLineItemAccessors
+trait HasLineItemFields
 {
     /**
      * @throws UnhandledMatchError

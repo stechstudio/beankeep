@@ -8,7 +8,7 @@ use STS\Beankeep\Values\SourceDocument;
 
 trait CanCastToSourceDocumentValue
 {
-    use HasSourceDocumentAccessors;
+    use HasSourceDocumentFields;
 
     public function toValue(): SourceDocument
     {

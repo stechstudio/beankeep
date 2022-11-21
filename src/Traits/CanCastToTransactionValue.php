@@ -8,7 +8,7 @@ use STS\Beankeep\Values\Transaction;
 
 trait CanCastToTransactionValue
 {
-    use HasTransactionAccessors;
+    use HasTransactionFields;
 
     public function toValue(): Transaction
     {

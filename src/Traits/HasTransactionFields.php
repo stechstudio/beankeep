@@ -8,7 +8,7 @@ use DateTimeImmutable;
 use STS\Beankeep\Interfaces\IsSourceDocument as SourceDocument;
 use UnhandledMatchError;
 
-trait HasTransactionAccessors
+trait HasTransactionFields
 {
     /**
      * @throws UnhandledMatchError

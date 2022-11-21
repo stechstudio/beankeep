@@ -8,7 +8,7 @@ use STS\Beankeep\Values\LineItem;
 
 trait CanCastToLineItemValue
 {
-    use HasLineItemAccessors;
+    use HasLineItemFields;
 
     public function toValue(): LineItem
     {
