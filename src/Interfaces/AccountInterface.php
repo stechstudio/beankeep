@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Interfaces;
 
+use STS\Beankeep\Enums\AccountType;
 use STS\Beankeep\Values\Account;
 
 interface AccountInterface
@@ -14,7 +15,7 @@ interface AccountInterface
 
     public function getAccountNumber(): string;
 
-    public function getBaseType(): string;
+    public function getBaseType(): AccountType;
 
     public function getName(): string;
 }

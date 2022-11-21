@@ -2,6 +2,7 @@
 
 namespace STS\Beankeep\Values;
 
+use STS\Beankeep\Enums\AccountType;
 use STS\Beankeep\Interfaces\AccountInterface;
 use STS\Beankeep\Traits\CanCastToAccountValue;
 
@@ -15,7 +16,7 @@ final readonly class Account implements AccountInterface
     public function __construct(
         public string|int $id,
         public string $accountNumber,
-        public string $baseType,
+        public AccountType $baseType,
         public string $name,
     ) {
     }
@@ -23,7 +24,7 @@ final readonly class Account implements AccountInterface
     public static function make(
         string|int $id,
         string $accountNumber,
-        string $baseType,
+        AccountType $baseType,
         string $name,
     ): self {
         return new self($id, $accountNumber, $baseType, $name);

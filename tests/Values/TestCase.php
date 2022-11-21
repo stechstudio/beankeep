@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Tests\Values;
 
-use PHPUnit\Framework\TestCase as BaseTestCase;
 use DateTimeImmutable;
+use PHPUnit\Framework\TestCase as BaseTestCase;
+use STS\Beankeep\Enums\AccountType;
 use STS\Beankeep\Values\Account;
 use STS\Beankeep\Values\SourceDocument;
 use STS\Beankeep\Values\Transaction;
@@ -30,7 +31,7 @@ class TestCase extends BaseTestCase
         return $this->account ??= Account::make(
             id: 1,
             accountNumber: '1010',
-            baseType: 'asset',
+            baseType: AccountType::Asset,
             name: 'Cash',
         );
     }

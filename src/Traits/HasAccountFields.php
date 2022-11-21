@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace STS\Beankeep\Traits;
 
+use STS\Beankeep\Enums\AccountType;
 use UnhandledMatchError;
 
 trait HasAccountFields
@@ -31,7 +32,7 @@ trait HasAccountFields
         return $this->{static::beankeepPropertyLookup('accountNumber')};
     }
 
-    public function getBaseType(): string
+    public function getBaseType(): AccountType
     {
         return $this->{static::beankeepPropertyLookup('baseType')};
     }
