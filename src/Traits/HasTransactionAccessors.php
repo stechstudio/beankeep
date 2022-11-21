@@ -24,17 +24,17 @@ trait HasTransactionAccessors
 
     public function getId(): string|int
     {
-        return $this->${static::beankeepPropertyLookup('id')};
+        return $this->{static::beankeepPropertyLookup('id')};
     }
 
     public function getSourceDocument(): SourceDocument
     {
-        return $this->${static::beankeepPropertyLookup('sourceDocument')};
+        return $this->{static::beankeepPropertyLookup('sourceDocument')};
     }
 
     public function getDate(): DateTimeImmutable
     {
-        return $this->${static::beankeepPropertyLookup('date')};
+        return $this->{static::beankeepPropertyLookup('date')};
     }
 }
 

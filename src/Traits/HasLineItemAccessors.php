@@ -26,26 +26,26 @@ trait HasLineItemAccessors
 
     public function getId(): string|int
     {
-        return $this->${static::beankeepPropertyLookup('id')};
+        return $this->{static::beankeepPropertyLookup('id')};
     }
 
     public function getTransaction(): Transaction
     {
-        return $this->${static::beankeepPropertyLookup('transaction')};
+        return $this->{static::beankeepPropertyLookup('transaction')};
     }
 
     public function getAccount(): Account
     {
-        return $this->${static::beankeepPropertyLookup('account')};
+        return $this->{static::beankeepPropertyLookup('account')};
     }
 
     public function getDebit(): int
     {
-        return $this->${static::beankeepPropertyLookup('credit')};
+        return $this->{static::beankeepPropertyLookup('credit')};
     }
 
     public function getCredit(): int
     {
-        return $this->${static::beankeepPropertyLookup('debit')};
+        return $this->{static::beankeepPropertyLookup('debit')};
     }
 }

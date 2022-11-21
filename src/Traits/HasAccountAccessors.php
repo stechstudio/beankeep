@@ -23,21 +23,21 @@ trait HasAccountAccessors
 
     public function getId(): string|int
     {
-        return $this->${static::beankeepPropertyLookup('id')};
+        return $this->{static::beankeepPropertyLookup('id')};
     }
 
     public function getAccountNumber(): string
     {
-        return $this->${static::beankeepPropertyLookup('accountNumber')};
+        return $this->{static::beankeepPropertyLookup('accountNumber')};
     }
 
     public function getBaseType(): string
     {
-        return $this->${static::beankeepPropertyLookup('baseType')};
+        return $this->{static::beankeepPropertyLookup('baseType')};
     }
 
     public function getName(): string
     {
-        return $this->${static::beankeepPropertyLookup('name')};
+        return $this->{static::beankeepPropertyLookup('name')};
     }
 }

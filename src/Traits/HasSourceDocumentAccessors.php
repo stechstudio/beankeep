@@ -24,21 +24,21 @@ trait HasSourceDocumentAccessors
 
     public function getId(): string|int
     {
-        return $this->${static::beankeepPropertyLookup('id')};
+        return $this->{static::beankeepPropertyLookup('id')};
     }
 
     public function getDate(): DateTimeImmutable
     {
-        return $this->${static::beankeepPropertyLookup('date')};
+        return $this->{static::beankeepPropertyLookup('date')};
     }
 
     public function getMemo(): string
     {
-        return $this->${static::beankeepPropertyLookup('memo')};
+        return $this->{static::beankeepPropertyLookup('memo')};
     }
 
     public function getAttachment(): string
     {
-        return $this->${static::beankeepPropertyLookup('attachment')};
+        return $this->{static::beankeepPropertyLookup('attachment')};
     }
 }
