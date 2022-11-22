@@ -10,14 +10,15 @@ use STS\Beankeep\Traits\CanCastToTransactionValue;
  * Association when a source document is posted to the system via two or more
  * line items.
  */
-final readonly class Transaction implements TransactionInterface
+// TODO(zmd): swith back to readonly class once 8.2 hits GA in December '22
+final class Transaction implements TransactionInterface
 {
     use CanCastToTransactionValue;
 
     public function __construct(
-        public string|int $id,
-        public SourceDocument $sourceDocument,
-        public DateTimeImmutable $date,
+        public readonly string|int $id,
+        public readonly SourceDocument $sourceDocument,
+        public readonly DateTimeImmutable $date,
     ) {
     }
 

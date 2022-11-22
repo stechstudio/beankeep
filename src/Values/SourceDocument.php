@@ -9,15 +9,16 @@ use STS\Beankeep\Traits\CanCastToSourceDocumentValue;
 /**
  * Track the source of financial transactions recorded by the system.
  */
-final readonly class SourceDocument implements SourceDocumentInterface
+// TODO(zmd): swith back to readonly class once 8.2 hits GA in December '22
+final class SourceDocument implements SourceDocumentInterface
 {
     use CanCastToSourceDocumentValue;
 
     public function __construct(
-        public string|int $id,
-        public DateTimeImmutable $date,
-        public string $memo,
-        public string $attachment,
+        public readonly string|int $id,
+        public readonly DateTimeImmutable $date,
+        public readonly string $memo,
+        public readonly string $attachment,
     ) {
     }
 

@@ -8,16 +8,17 @@ use STS\Beankeep\Traits\CanCastToLineItemValue;
 /**
  * Record an operation (debit or credit) for a transaction against an account.
  */
-final readonly class LineItem implements LineItemInterface
+// TODO(zmd): swith back to readonly class once 8.2 hits GA in December '22
+final class LineItem implements LineItemInterface
 {
     use CanCastToLineItemValue;
 
     public function __construct(
-        public string|int $id,
-        public Transaction $transaction,
-        public Account $account,
-        public int $debit,
-        public int $credit,
+        public readonly string|int $id,
+        public readonly Transaction $transaction,
+        public readonly Account $account,
+        public readonly int $debit,
+        public readonly int $credit,
     ) {
     }
 
