@@ -2,6 +2,8 @@
     "name": "stechstudio/beankeep",
     "description": "PHP Library to facilitate double-entry bookkeeping",
     "type": "library",
+    "version": "0.1.0-dev",
+    "license": "MIT",
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     },
