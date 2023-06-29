@@ -9,16 +9,15 @@ use STS\Beankeep\Traits\CanCastToAccountValue;
 /**
  * Record all activity in the chart of accounts.
  */
-// TODO(zmd): swith back to readonly class once 8.2 hits GA in December '22
-final class Account implements AccountInterface
+final readonly class Account implements AccountInterface
 {
     use CanCastToAccountValue;
 
     public function __construct(
-        public readonly string|int $id,
-        public readonly string $accountNumber,
-        public readonly AccountType $type,
-        public readonly string $name,
+        public string|int $id,
+        public string $accountNumber,
+        public AccountType $type,
+        public string $name,
     ) {
     }
 
